@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardPoster"
+        android:layout_marginStart="20dp"
+        android:layout_width="144.61dp"
+        android:layout_height="210dp"
+        app:cardCornerRadius="16dp"
+        app:cardUseCompatPadding="false"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="@color/back"
+        app:cardPreventCornerOverlap="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/poster"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop" />
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <ImageView
+        android:id="@+id/number"
+        android:layout_width="46.53dp"
+        android:layout_height="57.84dp"
+        android:layout_marginEnd="108.04dp"
+        android:src="@drawable/number_2"
+        android:layout_marginTop="175.05dp"
+        app:layout_constraintEnd_toStartOf="@id/cardPoster"
+        app:layout_constraintStart_toStartOf="@id/cardPoster"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

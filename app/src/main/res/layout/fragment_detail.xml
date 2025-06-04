@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/back"
+    android:layout_height="match_parent"
+    tools:context=".MovieDetail.DetailFragment">
+    
+    
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="24dp"
+        android:src="@drawable/vector"
+        app:layout_constraintTop_toTopOf="@id/textDetail"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/back"/>
+    
+    <TextView
+        android:id="@+id/textDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:textSize="16dp"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintStart_toEndOf="@id/back"
+        android:text="Detail"
+        android:textStyle="bold"
+        android:textColor="@color/white"/>
+
+
+    <ImageView
+        android:id="@+id/favoriteIcon"
+        android:layout_width="18dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="112dp"
+        android:src="@drawable/checkmark"
+        android:foregroundGravity="center"
+        app:layout_constraintTop_toTopOf="@id/textDetail"
+        app:layout_constraintStart_toEndOf="@id/textDetail"
+        android:background="@color/back"/>
+
+  
+
+    <ImageView
+        android:id="@+id/imageCover"
+        android:layout_width="match_parent"
+        android:layout_height="210.94dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textDetail"
+        android:layout_marginTop="20dp"/>
+
+
+    <ImageView
+        android:id="@+id/imageMain"
+        android:layout_width="95dp"
+        android:layout_height="120dp"
+        app:layout_constraintStart_toStartOf="@id/imageCover"
+        app:layout_constraintTop_toTopOf="@id/imageCover"
+        app:layout_constraintTop_toBottomOf="@id/textDetail"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="151dp"
+        android:layout_marginStart="29dp"
+        android:background="@drawable/image_background"
+        />
+
+    <TextView
+        android:id="@+id/movieName"
+        android:layout_width="210dp"
+        android:layout_height="48dp"
+        android:textSize="18dp"
+        android:gravity="start"
+        app:layout_constraintTop_toBottomOf="@id/imageCover"
+        app:layout_constraintStart_toEndOf="@id/imageMain"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12.06dp"
+        android:text="Spiderman No Way
+        Home"
+        android:textStyle="bold"
+        android:textColor="@color/white"/>
+
+  <LinearLayout
+      android:id="@+id/infoLine"
+      android:layout_width="match_parent"
+      app:layout_constraintTop_toBottomOf="@id/imageMain"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:layout_marginTop="16dp"
+      android:gravity="center"
+      >
+     <ImageView
+         android:layout_width="16dp"
+         android:layout_height="16dp"
+         android:src="@drawable/calendar_icon"
+         />
+      <TextView
+          android:id="@+id/releaseDate"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="2021"
+          android:layout_marginStart="12dp"
+          android:layout_gravity="start"
+          />
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="|"
+          android:layout_marginStart="12dp"
+          android:layout_gravity="start"
+          />
+      <ImageView
+          android:layout_width="16dp"
+          android:layout_marginStart="12dp"
+          android:layout_height="16dp"
+          android:src="@drawable/clock"
+          />
+
+      <TextView
+          android:id="@+id/minutes"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="148 minutes"
+          android:layout_marginStart="12dp"
+          android:layout_gravity="start"
+          />
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="|"
+          android:layout_marginStart="12dp"
+          android:layout_gravity="start"
+          />
+      <ImageView
+          android:layout_width="16dp"
+          android:layout_height="16dp"
+          android:layout_marginStart="12dp"
+          android:src="@drawable/ticket"
+          />
+      <TextView
+          android:id="@+id/action"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Action"
+          android:layout_marginStart="12dp"
+          android:layout_gravity="start"
+          />
+
+  </LinearLayout>
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:background="@color/back"
+        app:tabTextColor="@color/white"
+        app:tabIndicatorColor="@color/searchBack"
+        android:layout_marginStart="27dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf = "@id/infoLine"
+        android:layout_marginTop="24dp"
+        app:tabTextAppearance="@style/CustomTabText"
+        >
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="About Movie"
+            />
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reviews"
+            />
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cast"
+            />
+
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/movie_description_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout2" />
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

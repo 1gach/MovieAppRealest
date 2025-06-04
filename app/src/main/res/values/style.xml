@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomSearchViewStyle" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:queryHint">Search movies...</item> <!-- Optional: change hint text -->
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:textColorHint">@color/grey</item> <!-- Optional: hint color -->
+        <item name="android:iconifiedByDefault">false</item> <!-- Make search icon always visible -->
+        <item name="android:background">?android:attr/selectableItemBackground</item> <!-- Add underline -->
+    </style>
+
+    <style name="CustomTabText" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#000000</item> <!-- Optional -->
+    </style>
+</resources>
