@@ -16,6 +16,25 @@ import retrofit2.http.Query
             @Query("page") page: Int
         ): MovieResponse
 
+        @GET("movie/upcoming")
+        suspend fun getUpcomingMovies(
+            @Query("api_key") apiKey: String,
+            @Query("page") page: Int
+        ): MovieResponse
+
+
+        @GET("movie/top_rated")
+        suspend fun getTopRatedMovies(
+            @Query("api_key") apiKey: String,
+            @Query("page") page: Int
+        ): MovieResponse
+
+        @GET("movie/popular")
+        suspend fun getPopularMovies(
+            @Query("api_key") apiKey: String,
+            @Query("page") page: Int
+        ): MovieResponse
+
         @GET("movie/{movie_id}")
         suspend fun getMovieDetails(
             @Path("movie_id") movieId: Int,

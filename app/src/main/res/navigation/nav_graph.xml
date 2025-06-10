@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/homeFragment">
+
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.moviesapp2.HomeFragment"
@@ -15,11 +16,14 @@
             android:name="showSearch"
             app:argType="boolean"
             android:defaultValue="false" />
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
 
-</fragment>
+    </fragment>
     <fragment
         android:id="@+id/watchListFragment"
-        android:name="com.example.moviesapp2.WatchListFragment"
+        android:name="com.example.moviesapp2.WatchList.WatchListFragment"
         android:label="fragment_watch_list"
         tools:layout="@layout/fragment_watch_list" />
     <fragment
@@ -36,7 +40,13 @@
             app:destination="@id/homeFragment" />
     </fragment>
 
-<!--    <fragment-->
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.moviesapp2.Search.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
+
+    <!--    <fragment-->
 <!--        android:id="@+id/nowPlayingFragment"-->
 <!--        android:name="com.example.moviesapp2.NowPlaying.NowPlayingFragment"-->
 <!--        android:label="fragment_watch_list"-->

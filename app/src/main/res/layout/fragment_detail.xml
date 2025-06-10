@@ -1,48 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nestedScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/back">
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:background="@color/back"
     android:layout_height="match_parent"
     tools:context=".MovieDetail.DetailFragment">
-    
-    
+
+
     <ImageButton
         android:id="@+id/back"
-        android:layout_width="36dp"
+        android:layout_width="0dp"
         android:layout_height="36dp"
         android:layout_marginStart="24dp"
+        android:layout_marginEnd="86dp"
+        android:background="@color/back"
         android:src="@drawable/vector"
-        app:layout_constraintTop_toTopOf="@id/textDetail"
+        app:layout_constraintBottom_toBottomOf="@+id/textDetail"
+        app:layout_constraintEnd_toStartOf="@+id/textDetail"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@color/back"/>
-    
+        app:layout_constraintTop_toTopOf="@id/textDetail" />
+
     <TextView
         android:id="@+id/textDetail"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="36dp"
-        android:textSize="16dp"
+        android:layout_marginStart="146dp"
+        android:layout_marginEnd="146dp"
+        android:layout_marginTop="53dp"
+        android:layout_marginBottom="670dp"
         android:gravity="center"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="60dp"
-        app:layout_constraintStart_toEndOf="@id/back"
         android:text="Detail"
+        android:textColor="@color/white"
+        android:textSize="16dp"
         android:textStyle="bold"
-        android:textColor="@color/white"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
-    <ImageView
-        android:id="@+id/favoriteIcon"
-        android:layout_width="18dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="112dp"
-        android:src="@drawable/checkmark"
+    <ImageButton
+        android:id="@+id/removedFromWatchListIcon"
+        android:layout_width="0dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="333dp"
+        android:background="@color/back"
         android:foregroundGravity="center"
-        app:layout_constraintTop_toTopOf="@id/textDetail"
-        app:layout_constraintStart_toEndOf="@id/textDetail"
-        android:background="@color/back"/>
+        android:src="@drawable/bookmark_empty"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/textDetail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/textDetail" />
+<ImageButton
+    android:id="@+id/addedToWatchListIcon"
+    android:layout_width="0dp"
+    android:layout_height="24dp"
+    android:layout_marginEnd="24dp"
+    android:layout_marginStart="333dp"
+    android:background="@color/back"
+    android:foregroundGravity="center"
+    android:src="@drawable/bookmark_filled"
+    android:visibility="gone"
+    app:layout_constraintBottom_toBottomOf="@+id/textDetail"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="@id/textDetail" />
 
   
 
@@ -55,6 +88,41 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textDetail"
         android:layout_marginTop="20dp"/>
+
+    <View
+        android:id="@+id/starBack"
+        android:layout_width="54dp"
+        android:layout_height="24dp"
+        android:layout_marginBottom="8.94dp"
+        android:layout_marginEnd="11dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageCover"
+        app:layout_constraintEnd_toEndOf="@+id/imageCover"
+        android:background="@drawable/star_background"
+        android:elevation="8dp"
+        />
+    <ImageView
+        android:id="@+id/star_icon"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:src="@drawable/star"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="@id/starBack"
+        app:layout_constraintBottom_toBottomOf="@id/starBack"
+        android:layout_marginStart="9.5dp"
+        android:layout_marginBottom="4dp"
+        />
+
+    <TextView
+        android:id="@+id/star"
+        android:layout_width="18dp"
+        android:layout_height="15dp"
+        app:layout_constraintStart_toEndOf="@id/star_icon"
+        app:layout_constraintTop_toTopOf="@id/star_icon"
+        app:layout_constraintBottom_toBottomOf="@id/star_icon"
+        android:layout_marginStart="4dp"
+        android:textColor="@color/orange"
+        android:textSize="12sp"
+        />
 
 
     <ImageView
@@ -156,47 +224,49 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout2"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:padding="12dp"
-        android:background="@color/back"
-        app:tabTextColor="@color/white"
-        app:tabIndicatorColor="@color/searchBack"
-        android:layout_marginStart="27dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf = "@id/infoLine"
         android:layout_marginTop="24dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginEnd="78dp"
+        android:background="@color/back"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/infoLine"
+        app:tabIndicatorColor="@color/searchBack"
         app:tabTextAppearance="@style/CustomTabText"
-        >
+        app:tabTextColor="@color/white">
+
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="About Movie"
-            />
+            android:text="About Movie" />
+
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Reviews"
-            />
+            android:text="Reviews" />
+
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cast"
-            />
+            android:text="Cast" />
 
 
     </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/movie_description_viewPager"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tabLayout2" />
 
 
 
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>

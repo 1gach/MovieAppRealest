@@ -5,17 +5,75 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.moviesapp2.NowPlaying.Movie
+import com.example.moviesapp2.NowPlaying.MoviePagingAdapter
+import com.example.moviesapp2.NowPlaying.NowPlayingFragment.MovieClickHandler
 import com.example.moviesapp2.R
+import com.example.moviesapp2.Upcoming.UpcomingViewModel
+import com.example.moviesapp2.databinding.FragmentTopRatedBinding
+import com.example.moviesapp2.databinding.FragmentUpcomingBinding
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 
 
 class TopRatedFragment : Fragment() {
+
+    private  var _binding : FragmentTopRatedBinding? = null
+    private val binding get() = _binding!!
+    private lateinit var viewModel: TopRatedViewModel
+    private lateinit var adapter: MoviePagingAdapter
+    private var movieClickListener: ((Movie) -> Unit)? = null
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        _binding = FragmentTopRatedBinding.inflate(inflater, container, false)
+        return binding.root
 
-        return inflater.inflate(R.layout.fragment_top_rated, container, false)
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        pagingAdapt()
+        clickHandle()
+
+    }
+
+    private fun pagingAdapt(){
+        adapter = MoviePagingAdapter { movie ->
+            movieClickListener?.invoke(movie)
+        }
+
+        binding.recyclerMovie.layoutManager = GridLayoutManager(requireContext(), 3, RecyclerView.VERTICAL, false)
+        binding.recyclerMovie.adapter = adapter
+
+        viewModel = ViewModelProvider(this)[TopRatedViewModel::class.java]
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.topRatedMovies.collectLatest { pagingData ->
+                adapter.submitData(pagingData)
+            }
+        }
+    }
+
+
+
+    private fun clickHandle(){
+        if (parentFragment is MovieClickHandler) {
+            movieClickListener = (parentFragment as MovieClickHandler)::onMovieClick
+        } else {
+            throw IllegalStateException("Parent fragment must implement MovieClickHandler")
+        }
+    }
+
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     companion object {

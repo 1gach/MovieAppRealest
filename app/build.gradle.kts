@@ -5,6 +5,8 @@ plugins {
     id ("kotlin-parcelize")
     kotlin("plugin.parcelize")
     id ("androidx.navigation.safeargs.kotlin")
+    id("kotlin-kapt")
+    val room_version = "2.7.1"
 
 }
 
@@ -71,6 +73,16 @@ dependencies {
 
     implementation (libs.androidx.navigation.fragment.ktx)
     implementation (libs.androidx.navigation.ui.ktx)
+
+    // Room
+
+    implementation(libs.room.runtime)
+    implementation(libs.room.ktx)
+    kapt(libs.room.compiler)
+
+
+
+
 
 
 

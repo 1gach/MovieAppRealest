@@ -4,8 +4,12 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.room.Room
 import com.example.moviesapp2.RetrofitClient
+import com.example.moviesapp2.WatchList.MovieDatabase
+import com.example.moviesapp2.WatchList.WatchlistMovie
 import kotlinx.coroutines.launch
+
 
 class MovieDetailsViewModel: ViewModel() {
     private val apiKey =  "6df68ab00fa7dd19a922a50ec6885352"
@@ -40,6 +44,8 @@ class MovieDetailsViewModel: ViewModel() {
             }
         }
     }
+
+
 
     fun fetchMovieDetails(movieId: Int) {
         viewModelScope.launch {

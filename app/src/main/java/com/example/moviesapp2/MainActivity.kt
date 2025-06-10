@@ -9,6 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
@@ -32,19 +33,33 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         val navHostFragment = supportFragmentManager
-            .findFragmentById(R.id.nav_host_fragment) as androidx.navigation.fragment.NavHostFragment
+            .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
 
+        NavigationUI.setupWithNavController(binding.bottomNav, navController)
+
         val mainViewModel = ViewModelProvider(this)[MainViewModel::class.java]
+
+
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.homeFragment -> binding.bottomNav.menu.findItem(R.id.homeFragment).isChecked = true
+                R.id.searchFragment -> binding.bottomNav.menu.findItem(R.id.searchFragment).isChecked = true
+                R.id.watchListFragment -> binding.bottomNav.menu.findItem(R.id.watchListFragment).isChecked = true
+                R.id.detailFragment -> binding.bottomNav.menu.findItem(R.id.homeFragment).isChecked = true
+                // Don't check anything for DetailFragment, etc.
+                else -> binding.bottomNav.menu.setGroupCheckable(0, false, true)
+            }
+        }
 
 
         binding.bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.searchFragment -> {
                     // Navigate to HomeFragment
-                    navController.navigate(R.id.homeFragment,
+                    navController.navigate(R.id.searchFragment,
                         Bundle().apply { putBoolean("showSearch", true) })
                     // Signal HomeFragment to show the RecyclerView
                     mainViewModel.showSearchResults.value = true
@@ -67,41 +82,5 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-//     fun loadFragment(f:Int){
-//        findNavController().navigate(f)
-//    }
-
-
-//    private fun botNav(){
-//        binding.bottomNav.setOnItemSelectedListener {
-//            when(it.itemId){
-//                R.id.home_icon -> {
-//                    loadFragment(R.id.homeFragment)
-//                    true
-//                }
-//                R.id.search -> {
-//                    loadFragment(R.id.searchFragment)
-//                    true
-//                }
-//                R.id.watchList -> {
-//                    loadFragment(R.id.watchListFragment)
-//                    true
-//                }
-//                else -> {
-//                    loadFragment(R.id.homeFragment)
-//                    true
-//                }
-//            }
-//
-//        }
-//    }
-
-//    private fun addPosters(){
-//        binding.recycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-//        binding.recycler.adapter = ImageAdapter(posters, numbers)
-//
-//
-//
-//    }
 
 }

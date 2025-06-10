@@ -1,5 +1,6 @@
 package com.example.moviesapp2.NowPlaying
 
+import android.graphics.drawable.Drawable
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize

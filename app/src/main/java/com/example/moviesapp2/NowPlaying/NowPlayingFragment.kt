@@ -34,7 +34,6 @@ class NowPlayingFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        // HomeFragment should implement this
         if (parentFragment is MovieClickHandler) {
             movieClickListener = (parentFragment as MovieClickHandler)::onMovieClick
         } else {
@@ -63,8 +62,8 @@ class NowPlayingFragment : Fragment() {
             movieClickListener?.invoke(movie)
         }
 
-        binding.recyclerNowPlaying.layoutManager = GridLayoutManager(requireContext(), 3, RecyclerView.VERTICAL, false)
-        binding.recyclerNowPlaying.adapter = adapter
+        binding.recyclerMovie.layoutManager = GridLayoutManager(requireContext(), 3, RecyclerView.VERTICAL, false)
+        binding.recyclerMovie.adapter = adapter
 
         viewModel = ViewModelProvider(this)[MovieViewModel::class.java]
 

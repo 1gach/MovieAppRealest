@@ -1,34 +1,39 @@
-package com.example.moviesapp2
+package com.example.moviesapp2.HomePosters
 
-import android.content.Context
-import android.util.TypedValue
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.moviesapp2.NowPlaying.Movie
 import com.example.moviesapp2.databinding.ItemPosterBinding
 
-class ImageAdapter(private val posters: List<Movie>) :
+class ImageAdapter :
     RecyclerView.Adapter<ImageAdapter.PosterViewHolder>() {
+
+    private val posters = mutableListOf<Movie>()
+    private val numbers = mutableListOf<Int>()
+
+    fun submitPosterList(newList: List<Movie>) {
+        posters.clear()
+        posters.addAll(newList)
+        notifyDataSetChanged()
+    }
+
+    fun submitNumberList(numList : List<Int>){
+        numbers.addAll(numList)
+    }
+
 
     inner class PosterViewHolder(val binding: ItemPosterBinding) : RecyclerView.ViewHolder(binding.root){
         fun onBind(position: Int) {
             val poster: Movie = posters[position]
-            val posterUrl = "https://image.tmdb.org/t/p/w500" + poster.posterPath
-//            Glide.with(binding.poster.context)
-//                .load(posterUrl)
-//                .transform(RoundedCorners(radiusInPx))
-//                .into(binding.poster)
-            Glide.with(binding.poster.context)
-                .load("https://image.tmdb.org/t/p/w500/8YFL5QQVPy3AgrEQxNYVSgiPEbe.jpg")
+            val posterUrl = "https://image.tmdb.org/t/p/w500${poster.posterPath}"
+             Glide.with(binding.poster.context)
+                .load(posterUrl)
                 .into(binding.poster)
-            
 
+            val num: Int =  numbers[position]
+            binding.number.setImageResource(num)
         }
     }
     override fun onBindViewHolder(holder: PosterViewHolder, position: Int) {

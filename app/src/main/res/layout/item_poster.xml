@@ -15,6 +15,7 @@
         app:cardUseCompatPadding="false"
         app:cardElevation="0dp"
         app:cardBackgroundColor="@color/back"
+        app:strokeColor="@color/back"
         app:cardPreventCornerOverlap="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -32,12 +33,13 @@
         android:id="@+id/number"
         android:layout_width="46.53dp"
         android:layout_height="57.84dp"
-        android:layout_marginEnd="108.04dp"
-        android:src="@drawable/number_2"
-        android:layout_marginTop="175.05dp"
+        android:layout_marginEnd="108.14dp"
+        android:src="@drawable/number_1"
+        android:scaleType="fitCenter"
+        android:layout_marginTop="163.05dp"
         app:layout_constraintEnd_toStartOf="@id/cardPoster"
         app:layout_constraintStart_toStartOf="@id/cardPoster"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/cardPoster" />
 
 
 

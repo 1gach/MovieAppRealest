@@ -9,7 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
-import com.example.moviesapp2.databinding.ItemNowPlayingBinding
+import com.example.moviesapp2.databinding.ItemMoviesBinding
+
 
 
 
@@ -23,25 +24,25 @@ class MoviePagingAdapter  (private val onItemClick: (Movie) -> Unit
         }
     }
 
-    inner class MovieViewHolder(private val binding: ItemNowPlayingBinding) :
+    inner class MovieViewHolder(private val binding: ItemMoviesBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(movie: Movie?) {
             if (movie == null) {
-                binding.imageNowPlaying.setImageDrawable(null)
+                binding.movieImage.setImageDrawable(null)
             } else {
                 val radiusInPx = TypedValue.applyDimension(
                     TypedValue.COMPLEX_UNIT_DIP,
                     16f,
-                    binding.imageNowPlaying.context.resources.displayMetrics
+                    binding.movieImage.context.resources.displayMetrics
                 ).toInt()
                 val posterUrl = "https://image.tmdb.org/t/p/w500" + movie.posterPath
-                Glide.with(binding.imageNowPlaying.context)
+                Glide.with(binding.movieImage.context)
                     .load(posterUrl)
                     .transform(RoundedCorners(radiusInPx))
-                    .into(binding.imageNowPlaying)
+                    .into(binding.movieImage)
 
-                binding.imageNowPlaying.setOnClickListener {
+                binding.movieImage.setOnClickListener {
                     onItemClick(movie)
                 }
             }
@@ -49,7 +50,7 @@ class MoviePagingAdapter  (private val onItemClick: (Movie) -> Unit
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
-        val binding = ItemNowPlayingBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = ItemMoviesBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return MovieViewHolder(binding)
     }
 

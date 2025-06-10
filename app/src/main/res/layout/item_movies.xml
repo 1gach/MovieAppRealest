@@ -9,7 +9,7 @@
 
 
 <ImageButton
-    android:id="@+id/imageNowPlaying"
+    android:id="@+id/movieImage"
     android:layout_width="100dp"
     android:layout_height="145.92dp"
     android:background="@drawable/image_background"
