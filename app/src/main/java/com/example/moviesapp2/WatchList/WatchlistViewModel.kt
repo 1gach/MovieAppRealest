@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 
 
 class WatchlistViewModel(application: Application) : AndroidViewModel(application)  {
-    private val db = DatabaseFactory.getDatabase(application)
+    private val db = getDatabase(application)
     private val watchlistDao = db.watchlistDao()
 
     private val dao: WatchlistDao = getDatabase(application).watchlistDao()

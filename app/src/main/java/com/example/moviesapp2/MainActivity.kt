@@ -73,6 +73,14 @@ class MainActivity : AppCompatActivity() {
                 )
                 true
             }
+                R.id.watchListFragment -> {
+                    // Navigate home, but make sure search view is closed
+                    navController.navigate(
+                        R.id.watchListFragment,
+                        Bundle().apply { putBoolean("showSearch", false) }
+                    )
+                    true
+                }
                 else -> {
                     NavigationUI.onNavDestinationSelected(item, navController)
                     true
