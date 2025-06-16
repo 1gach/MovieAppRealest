@@ -11,7 +11,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.paging.PagingData
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.moviesapp2.MainActivity
+import com.example.moviesapp2.UI.Activity.MainActivity
 import com.example.moviesapp2.R
 import com.example.moviesapp2.databinding.FragmentSearchBinding
 import kotlinx.coroutines.flow.collectLatest

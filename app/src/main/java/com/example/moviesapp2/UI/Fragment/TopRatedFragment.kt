@@ -1,4 +1,4 @@
-package com.example.moviesapp2.Popular
+package com.example.moviesapp2.TopRated
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -12,17 +12,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.moviesapp2.NowPlaying.Movie
 import com.example.moviesapp2.NowPlaying.MoviePagingAdapter
 import com.example.moviesapp2.NowPlaying.NowPlayingFragment.MovieClickHandler
-import com.example.moviesapp2.R
-import com.example.moviesapp2.Upcoming.UpcomingViewModel
-import com.example.moviesapp2.databinding.FragmentPopularBinding
-import com.example.moviesapp2.databinding.FragmentUpcomingBinding
+import com.example.moviesapp2.databinding.FragmentTopRatedBinding
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
-class PopularFragment : Fragment() {
-    private  var _binding : FragmentPopularBinding? = null
+
+class TopRatedFragment : Fragment() {
+
+    private  var _binding : FragmentTopRatedBinding? = null
     private val binding get() = _binding!!
-    private lateinit var viewModel: PopularViewModel
+    private lateinit var viewModel: TopRatedViewModel
     private lateinit var adapter: MoviePagingAdapter
     private var movieClickListener: ((Movie) -> Unit)? = null
 
@@ -31,11 +30,10 @@ class PopularFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentPopularBinding.inflate(inflater, container, false)
+        _binding = FragmentTopRatedBinding.inflate(inflater, container, false)
         return binding.root
+
     }
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         pagingAdapt()
         clickHandle()
@@ -50,10 +48,10 @@ class PopularFragment : Fragment() {
         binding.recyclerMovie.layoutManager = GridLayoutManager(requireContext(), 3, RecyclerView.VERTICAL, false)
         binding.recyclerMovie.adapter = adapter
 
-        viewModel = ViewModelProvider(this)[PopularViewModel::class.java]
+        viewModel = ViewModelProvider(this)[TopRatedViewModel::class.java]
 
         viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.popularMovies.collectLatest { pagingData ->
+            viewModel.topRatedMovies.collectLatest { pagingData ->
                 adapter.submitData(pagingData)
             }
         }
@@ -77,9 +75,7 @@ class PopularFragment : Fragment() {
 
     companion object {
 
-
         @JvmStatic
-        fun newInstance() =
-            PopularFragment()
+        fun newInstance() = TopRatedFragment()
             }
     }

@@ -1,18 +1,18 @@
-package com.example.moviesapp2.Popular
+package com.example.moviesapp2.Data.Paging
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.example.moviesapp2.MovieApi
 import com.example.moviesapp2.NowPlaying.Movie
 
-class PopularPagingSource (
+class UpcomingPagingSource (
     private val api: MovieApi,
     private val apiKey: String
 ) : PagingSource<Int, Movie>() {
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Movie> {
         val page = params.key ?: 1
         return try {
-            val response = api.getPopularMovies(apiKey, page)
+            val response = api.getTopRatedMovies(apiKey, page)
             LoadResult.Page(
                 data = response.results,
                 prevKey = if (page == 1) null else page - 1,

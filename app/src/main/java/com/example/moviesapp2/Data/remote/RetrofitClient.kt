@@ -1,5 +1,6 @@
-package com.example.moviesapp2
+package com.example.moviesapp2.Data.Local
 
+import com.example.moviesapp2.MovieApi
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

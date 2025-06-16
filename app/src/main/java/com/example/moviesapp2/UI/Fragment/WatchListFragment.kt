@@ -6,15 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.moviesapp2.MovieDetail.MovieDetailsViewModel
 import com.example.moviesapp2.R
-import com.example.moviesapp2.databinding.FragmentDetailBinding
+import com.example.moviesapp2.UI.Adapter.WatchListAdapter
+import com.example.moviesapp2.UI.ViewModel.WatchlistViewModel
 import com.example.moviesapp2.databinding.FragmentWatchListBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.coroutines.launch

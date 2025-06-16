@@ -1,15 +1,16 @@
-package com.example.moviesapp2.Search
+package com.example.moviesapp2.Data.Paging
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.example.moviesapp2.MovieApi
+import com.example.moviesapp2.Search.Searches
 
 
 class SearchPagingSource(
     private val api: MovieApi,
     private val apiKey: String,
     private val query: String
-) : PagingSource<Int,Searches>() {
+) : PagingSource<Int, Searches>() {
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Searches> {
         return try {

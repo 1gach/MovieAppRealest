@@ -3,10 +3,6 @@ package com.example.moviesapp2.DetailsVPItems
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.moviesapp2.NowPlaying.NowPlayingFragment
-import com.example.moviesapp2.Popular.PopularFragment
-import com.example.moviesapp2.TopRated.TopRatedFragment
-import com.example.moviesapp2.Upcoming.UpcomingFragment
 
 class DetailsPagerAdapter( fragment: Fragment,
                            private val movieId: Int) : FragmentStateAdapter(fragment) {

@@ -1,25 +1,20 @@
 package com.example.moviesapp2
 
-import android.graphics.RenderEffect
-import android.graphics.drawable.Drawable
-import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
-import com.example.moviesapp2.HomePosters.ImageAdapter
-import com.example.moviesapp2.NowPlaying.HomePagerAdapter
-import com.example.moviesapp2.NowPlaying.Movie
-import com.example.moviesapp2.NowPlaying.NowPlayingFragment
-import com.example.moviesapp2.Popular.PopularViewModel
-import com.example.moviesapp2.Search.SearchPagingAdapter
-import com.example.moviesapp2.Search.SearchViewModel
+import com.example.moviesapp2.UI.Adapter.ImageAdapter
+import com.example.moviesapp2.UI.Adapter.HomePagerAdapter
+import com.example.moviesapp2.Data.remote.models.Movie
+import com.example.moviesapp2.UI.Fragment.NowPlayingFragment
+import com.example.moviesapp2.UI.ViewModel.PopularViewModel
+import com.example.moviesapp2.UI.Adapter.SearchPagingAdapter
 import com.example.moviesapp2.databinding.FragmentHomeBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
