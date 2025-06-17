@@ -1,9 +1,9 @@
-package com.example.moviesapp2.Data.Paging
+package com.example.moviesapp2.Data.Local.Paging
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.example.moviesapp2.MovieApi
-import com.example.moviesapp2.NowPlaying.Movie
+import com.example.moviesapp2.Data.remote.api.MovieApi
+import com.example.moviesapp2.Data.remote.models.Movie
 
 class UpcomingPagingSource (
     private val api: MovieApi,

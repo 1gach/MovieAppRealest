@@ -1,4 +1,4 @@
-package com.example.moviesapp2.DetailsVPItems
+package com.example.moviesapp2.UI.Fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,9 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
-import com.example.moviesapp2.MovieDetail.MovieDetailsViewModel
-import com.example.moviesapp2.R
-import com.example.moviesapp2.databinding.FragmentAboutMovieBinding
+import com.example.moviesapp2.UI.ViewModel.MovieDetailsViewModel
 import com.example.moviesapp2.databinding.FragmentReviewsBinding
 
 

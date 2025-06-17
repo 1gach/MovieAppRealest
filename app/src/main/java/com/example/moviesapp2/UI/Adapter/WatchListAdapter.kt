@@ -1,9 +1,10 @@
-package com.example.moviesapp2.WatchList
+package com.example.moviesapp2.UI.Adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.moviesapp2.Data.Local.Entities.WatchlistMovie
 import com.example.moviesapp2.databinding.ItemWatchListBinding
 
 class WatchListAdapter

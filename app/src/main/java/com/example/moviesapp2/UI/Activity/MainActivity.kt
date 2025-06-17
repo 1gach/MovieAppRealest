@@ -1,23 +1,13 @@
-package com.example.moviesapp2
+package com.example.moviesapp2.UI.Activity
 
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import android.widget.ListView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.setupWithNavController
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.moviesapp2.Search.MainViewModel
+import com.example.moviesapp2.R
+import com.example.moviesapp2.UI.ViewModel.MainViewModel
 import com.example.moviesapp2.databinding.ActivityMainBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
@@ -59,7 +49,8 @@ class MainActivity : AppCompatActivity() {
             when (item.itemId) {
                 R.id.searchFragment -> {
                     // Navigate to HomeFragment
-                    navController.navigate(R.id.searchFragment,
+                    navController.navigate(
+                        R.id.searchFragment,
                         Bundle().apply { putBoolean("showSearch", true) })
                     // Signal HomeFragment to show the RecyclerView
                     mainViewModel.showSearchResults.value = true

@@ -1,4 +1,4 @@
-package com.example.moviesapp2.Search
+package com.example.moviesapp2.UI.Fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -13,6 +13,8 @@ import androidx.paging.PagingData
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.moviesapp2.UI.Activity.MainActivity
 import com.example.moviesapp2.R
+import com.example.moviesapp2.UI.Adapter.SearchPagingAdapter
+import com.example.moviesapp2.UI.ViewModel.SearchViewModel
 import com.example.moviesapp2.databinding.FragmentSearchBinding
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch

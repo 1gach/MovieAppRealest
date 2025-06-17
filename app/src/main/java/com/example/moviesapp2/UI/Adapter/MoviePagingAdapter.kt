@@ -1,4 +1,4 @@
-package com.example.moviesapp2.NowPlaying
+package com.example.moviesapp2.UI.Adapter
 
 import android.util.TypedValue
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
-import com.bumptech.glide.request.RequestOptions
+import com.example.moviesapp2.Data.remote.models.Movie
 import com.example.moviesapp2.databinding.ItemMoviesBinding
 
 

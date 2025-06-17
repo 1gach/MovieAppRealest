@@ -1,23 +1,18 @@
-package com.example.moviesapp2.NowPlaying
+package com.example.moviesapp2.UI.Fragment
 
 import android.content.Context
-import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager2.widget.ViewPager2
-import com.example.moviesapp2.HomeFragmentDirections
-import com.example.moviesapp2.R
-import com.example.moviesapp2.databinding.FragmentHomeBinding
+import com.example.moviesapp2.Data.remote.models.Movie
+import com.example.moviesapp2.UI.Adapter.MoviePagingAdapter
+import com.example.moviesapp2.UI.ViewModel.MovieViewModel
 import com.example.moviesapp2.databinding.FragmentNowPlayingBinding
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch

@@ -13,7 +13,7 @@
     android:layout_width="match_parent"
     android:background="@color/back"
     android:layout_height="match_parent"
-    tools:context=".MovieDetail.DetailFragment">
+    tools:context=".UI.Fragment.DetailFragment">
 
 
     <ImageButton
@@ -125,18 +125,29 @@
         />
 
 
-    <ImageView
-        android:id="@+id/imageMain"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/Main"
         android:layout_width="95dp"
         android:layout_height="120dp"
         app:layout_constraintStart_toStartOf="@id/imageCover"
         app:layout_constraintTop_toTopOf="@id/imageCover"
+        app:strokeColor="@android:color/transparent"
+        app:cardPreventCornerOverlap="false"
         app:layout_constraintTop_toBottomOf="@id/textDetail"
         android:scaleType="centerCrop"
         android:layout_marginTop="151dp"
         android:layout_marginStart="29dp"
         android:background="@drawable/image_background"
-        />
+        >
+
+        <ImageView
+            android:id="@+id/imageMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop" />
+    </com.google.android.material.card.MaterialCardView>
+
 
     <TextView
         android:id="@+id/movieName"
@@ -145,7 +156,7 @@
         android:textSize="18dp"
         android:gravity="start"
         app:layout_constraintTop_toBottomOf="@id/imageCover"
-        app:layout_constraintStart_toEndOf="@id/imageMain"
+        app:layout_constraintStart_toEndOf="@id/Main"
         android:layout_marginStart="12dp"
         android:layout_marginTop="12.06dp"
         android:text="Spiderman No Way
@@ -156,7 +167,7 @@
   <LinearLayout
       android:id="@+id/infoLine"
       android:layout_width="match_parent"
-      app:layout_constraintTop_toBottomOf="@id/imageMain"
+      app:layout_constraintTop_toBottomOf="@id/Main"
       android:layout_height="wrap_content"
       android:orientation="horizontal"
       android:layout_marginTop="16dp"

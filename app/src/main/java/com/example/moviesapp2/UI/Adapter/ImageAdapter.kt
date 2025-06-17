@@ -1,10 +1,10 @@
-package com.example.moviesapp2.HomePosters
+package com.example.moviesapp2.UI.Adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.moviesapp2.NowPlaying.Movie
+import com.example.moviesapp2.Data.remote.models.Movie
 import com.example.moviesapp2.databinding.ItemPosterBinding
 
 class ImageAdapter :

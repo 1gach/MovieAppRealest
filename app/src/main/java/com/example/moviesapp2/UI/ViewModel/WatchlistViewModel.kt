@@ -1,11 +1,13 @@
-package com.example.moviesapp2.WatchList
+package com.example.moviesapp2.UI.ViewModel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
-import com.example.moviesapp2.MovieDetail.MovieDetailsResponse
-import com.example.moviesapp2.WatchList.DatabaseFactory.getDatabase
+import com.example.moviesapp2.Data.remote.models.MovieDetailsResponse
+import com.example.moviesapp2.Data.Local.db.DatabaseFactory.getDatabase
+import com.example.moviesapp2.Data.Local.dao.WatchlistDao
+import com.example.moviesapp2.Data.Local.Entities.WatchlistMovie
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 

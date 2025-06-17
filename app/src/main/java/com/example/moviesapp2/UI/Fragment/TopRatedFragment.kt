@@ -1,4 +1,4 @@
-package com.example.moviesapp2.TopRated
+package com.example.moviesapp2.UI.Fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,9 +9,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.moviesapp2.NowPlaying.Movie
-import com.example.moviesapp2.NowPlaying.MoviePagingAdapter
-import com.example.moviesapp2.NowPlaying.NowPlayingFragment.MovieClickHandler
+import com.example.moviesapp2.Data.remote.models.Movie
+import com.example.moviesapp2.UI.Adapter.MoviePagingAdapter
+import com.example.moviesapp2.UI.Fragment.NowPlayingFragment.MovieClickHandler
+import com.example.moviesapp2.UI.ViewModel.TopRatedViewModel
 import com.example.moviesapp2.databinding.FragmentTopRatedBinding
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch

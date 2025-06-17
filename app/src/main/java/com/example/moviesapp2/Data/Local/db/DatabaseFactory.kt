@@ -1,8 +1,7 @@
-package com.example.moviesapp2.WatchList
+package com.example.moviesapp2.Data.Local.db
 
 import android.content.Context
 import androidx.room.Room
-import com.example.moviesapp2.Data.Local.db.MovieDatabase
 
 object DatabaseFactory {
     private var INSTANCE: MovieDatabase? = null

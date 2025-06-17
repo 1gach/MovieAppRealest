@@ -1,4 +1,4 @@
-package com.example.moviesapp2.Popular
+package com.example.moviesapp2.UI.ViewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -7,9 +7,9 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.cachedIn
-import com.example.moviesapp2.NowPlaying.Movie
-import com.example.moviesapp2.RetrofitClient.api
-import com.example.moviesapp2.Upcoming.UpcomingPagingSource
+import com.example.moviesapp2.Data.remote.models.Movie
+import com.example.moviesapp2.Data.Local.Paging.PopularPagingSource
+import com.example.moviesapp2.Data.remote.RetrofitClient.api
 import kotlinx.coroutines.launch
 
 class PopularViewModel: ViewModel() {

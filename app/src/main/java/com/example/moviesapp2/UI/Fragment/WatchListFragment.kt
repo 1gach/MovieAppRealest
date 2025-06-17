@@ -1,4 +1,4 @@
-package com.example.moviesapp2.WatchList
+package com.example.moviesapp2.UI.Fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

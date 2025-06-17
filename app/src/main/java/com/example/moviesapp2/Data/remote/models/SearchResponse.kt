@@ -1,4 +1,4 @@
-package com.example.moviesapp2.Search
+package com.example.moviesapp2.Data.remote.models
 
 data class SearchResponse(
     val page: Int,

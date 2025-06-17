@@ -1,13 +1,13 @@
-package com.example.moviesapp2.MovieDetail
+package com.example.moviesapp2.UI.ViewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.room.Room
-import com.example.moviesapp2.RetrofitClient
-import com.example.moviesapp2.WatchList.MovieDatabase
-import com.example.moviesapp2.WatchList.WatchlistMovie
+import com.example.moviesapp2.Data.remote.models.Cast
+import com.example.moviesapp2.Data.remote.models.MovieDetailsResponse
+import com.example.moviesapp2.Data.remote.models.Review
+import com.example.moviesapp2.Data.remote.RetrofitClient
 import kotlinx.coroutines.launch
 
 

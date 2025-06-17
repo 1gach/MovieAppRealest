@@ -1,12 +1,12 @@
-package com.example.moviesapp2.TopRated
+package com.example.moviesapp2.UI.ViewModel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.cachedIn
-import com.example.moviesapp2.RetrofitClient.api
-import com.example.moviesapp2.Upcoming.UpcomingPagingSource
+import com.example.moviesapp2.Data.remote.RetrofitClient.api
+import com.example.moviesapp2.Data.Local.Paging.TopRatedPagingSource
 
 class TopRatedViewModel : ViewModel() {
 

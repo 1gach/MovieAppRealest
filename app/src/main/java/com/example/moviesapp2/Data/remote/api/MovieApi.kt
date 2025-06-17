@@ -1,10 +1,10 @@
-package com.example.moviesapp2
+package com.example.moviesapp2.Data.remote.api
 
-import com.example.moviesapp2.MovieDetail.CastResponse
-import com.example.moviesapp2.MovieDetail.MovieDetailsResponse
-import com.example.moviesapp2.MovieDetail.ReviewResponse
-import com.example.moviesapp2.NowPlaying.MovieResponse
-import com.example.moviesapp2.Search.SearchResponse
+import com.example.moviesapp2.Data.remote.models.CastResponse
+import com.example.moviesapp2.Data.remote.models.MovieDetailsResponse
+import com.example.moviesapp2.Data.remote.models.ReviewResponse
+import com.example.moviesapp2.Data.remote.models.MovieResponse
+import com.example.moviesapp2.Data.remote.models.SearchResponse
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query

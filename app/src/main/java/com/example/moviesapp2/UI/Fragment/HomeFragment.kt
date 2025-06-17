@@ -1,4 +1,4 @@
-package com.example.moviesapp2
+package com.example.moviesapp2.UI.Fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -12,7 +12,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.example.moviesapp2.UI.Adapter.ImageAdapter
 import com.example.moviesapp2.UI.Adapter.HomePagerAdapter
 import com.example.moviesapp2.Data.remote.models.Movie
-import com.example.moviesapp2.UI.Fragment.NowPlayingFragment
+import com.example.moviesapp2.R
 import com.example.moviesapp2.UI.ViewModel.PopularViewModel
 import com.example.moviesapp2.UI.Adapter.SearchPagingAdapter
 import com.example.moviesapp2.databinding.FragmentHomeBinding
@@ -52,7 +52,7 @@ class HomeFragment : Fragment() ,  NowPlayingFragment.MovieClickHandler {
 
     private fun moveToSearchFragment() {
          findNavController().navigate(
-            R.id.searchFragment,
+             R.id.searchFragment,
             Bundle().apply {  }
         )
 
@@ -88,8 +88,10 @@ class HomeFragment : Fragment() ,  NowPlayingFragment.MovieClickHandler {
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.recycler.adapter = adapter
 
-        val drawables = listOf<Int>(R.drawable.number_1,R.drawable.number_2 ,
-            R.drawable.number_3,R.drawable.number_4,R.drawable.number_5)
+        val drawables = listOf<Int>(
+            R.drawable.number_1, R.drawable.number_2,
+            R.drawable.number_3, R.drawable.number_4, R.drawable.number_5
+        )
 
 
         viewModel.popularPosters.observe(viewLifecycleOwner) { posters ->

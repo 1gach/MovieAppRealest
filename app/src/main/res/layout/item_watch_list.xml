@@ -11,6 +11,7 @@
         android:layout_width="95dp"
         android:layout_height="120dp"
         app:cardBackgroundColor="@color/back"
+        app:strokeColor="@color/back"
         app:cardCornerRadius="16dp"
         app:cardElevation="0dp"
         app:cardPreventCornerOverlap="false"

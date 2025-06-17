@@ -1,4 +1,4 @@
-package com.example.moviesapp2.MovieDetail
+package com.example.moviesapp2.UI.Fragment
 
 import android.graphics.RenderEffect
 import android.graphics.Shader
@@ -12,9 +12,10 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
-import com.example.moviesapp2.DetailsVPItems.DetailsPagerAdapter
+import com.example.moviesapp2.UI.Adapter.DetailsPagerAdapter
+import com.example.moviesapp2.UI.ViewModel.MovieDetailsViewModel
 import com.example.moviesapp2.R
-import com.example.moviesapp2.WatchList.WatchlistViewModel
+import com.example.moviesapp2.UI.ViewModel.WatchlistViewModel
 import com.example.moviesapp2.databinding.FragmentDetailBinding
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.coroutines.launch

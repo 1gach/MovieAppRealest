@@ -1,4 +1,4 @@
-package com.example.moviesapp2.Search
+package com.example.moviesapp2.UI.ViewModel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

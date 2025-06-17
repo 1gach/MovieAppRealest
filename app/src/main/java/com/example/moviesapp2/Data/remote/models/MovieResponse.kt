@@ -1,9 +1,7 @@
-package com.example.moviesapp2.NowPlaying
+package com.example.moviesapp2.Data.remote.models
 
-import android.graphics.drawable.Drawable
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import kotlinx.android.parcel.Parcelize
 
 data class MovieResponse(
     val page: Int,

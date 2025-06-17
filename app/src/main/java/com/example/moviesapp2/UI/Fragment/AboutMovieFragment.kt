@@ -1,19 +1,13 @@
-package com.example.moviesapp2.DetailsVPItems
+package com.example.moviesapp2.UI.Fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
-import com.example.moviesapp2.MovieDetail.MovieDetailsViewModel
-import com.example.moviesapp2.NowPlaying.HomePagerAdapter
-import com.example.moviesapp2.R
+import com.example.moviesapp2.UI.ViewModel.MovieDetailsViewModel
 import com.example.moviesapp2.databinding.FragmentAboutMovieBinding
-import com.example.moviesapp2.databinding.FragmentDetailBinding
-import com.google.android.material.tabs.TabLayoutMediator
 
 
 class AboutMovieFragment : Fragment() {

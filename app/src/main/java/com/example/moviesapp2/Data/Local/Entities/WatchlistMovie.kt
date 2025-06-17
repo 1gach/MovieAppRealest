@@ -1,4 +1,4 @@
-package com.example.moviesapp2.WatchList
+package com.example.moviesapp2.Data.Local.Entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

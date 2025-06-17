@@ -1,4 +1,4 @@
-package com.example.moviesapp2.Search
+package com.example.moviesapp2.UI.Adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,9 +6,12 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.moviesapp2.Data.remote.models.Searches
 import com.example.moviesapp2.databinding.ItemSearchBinding
 
-class SearchPagingAdapter: PagingDataAdapter<Searches,SearchPagingAdapter.SearchViewHolder>(DiffCallback) {
+class SearchPagingAdapter: PagingDataAdapter<Searches, SearchPagingAdapter.SearchViewHolder>(
+    DiffCallback
+) {
 
 
     inner class SearchViewHolder(private val binding: ItemSearchBinding) :
@@ -20,14 +23,14 @@ class SearchPagingAdapter: PagingDataAdapter<Searches,SearchPagingAdapter.Search
         }
     }
 
-    override fun onBindViewHolder(holder: SearchPagingAdapter.SearchViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: SearchViewHolder, position: Int) {
         getItem(position)?.let { holder.bind(it) }
     }
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): SearchPagingAdapter.SearchViewHolder {
+    ): SearchViewHolder {
         val binding = ItemSearchBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return SearchViewHolder(binding)
     }
